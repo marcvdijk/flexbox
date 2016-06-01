@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+
+<html lang="en-us">
+  
+  <head>
+    
+    <title>Flexbox demopage</title>
+    
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta name="description" content="Flexbox, a flexbox based layout system for the web.">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    
+    <link href="flexbox.css" rel="stylesheet" type="text/css">
+    <link href="demo.css" rel="stylesheet" type="text/css">
+  </head>
+  
+  <body>
+     
+    <!-- MAIN PAGE WRAPPER, ALSO A FLEXBOX -->
+    <div class="flex-container-rows halign-spacebetween page_wrapper" role="main">
+        
+        <!-- INTROTEXT, HORIZONTAL STRETCHED FLEXITEM -->
+        <div class="flex-item">
+          <div class="header center">
+            <h1>Flexy Boxes</h1>
+            <h4>Perhaps the most flexible way of organizing content on your site ever</h4>
+          </div>
+          <div class="content">
+            <p>Flexbox uses container elements (flex-container) in which item elements (flex-item) can be freely positioned.
+              Nearly any HTML element can be turned into a flexbox container or item. Flex items can be aligned 
+              horizontaly and verticaly, distribute white space around them and stretch on or both directions to
+              use available space.
+            <p>Flexbox is supported on all modern browsers with graceful fallback to a functional but less
+              feature rich basemodel on older browsers.</p>
+          </div>
+        </div>
+        
+        <!-- Flexrows alignment examples -->
+        <div class="flex-item" style="width: 100%">
+         <h3>Row based flex items layout</h3>
+        </div>
+        
+        <div class="flex-item hstretch flexdemo">
+          <h5>Default row layout</h5>
+          <p>All flex-items aligned top left, no stretching.</p>
+          <div class="flex-container-rows">
+            <div class="flex-item">1</div>
+            <div class="flex-item">2</div>
+            <div class="flex-item">3</div>
+          </div>
+        </div>
+        
+        <div class="flex-item hstretch flexdemo">
+          <h5>Row layout, changing item alignment</h5>
+          <p>All flex-items aligned top right, no stretching</p>
+          <div class="flex-container-rows halign-end">
+            <div class="flex-item">1</div>
+            <div class="flex-item">2</div>
+            <div class="flex-item">3</div>
+          </div>
+        </div>
+        
+        <div class="flex-item hstretch flexdemo">
+          <h5>Default row layout</h5>
+          <p>All flex-items aligned bottom left, no stretching.</p>
+          <div class="flex-container-rows valign-end">
+            <div class="flex-item">1</div>
+            <div class="flex-item">2</div>
+            <div class="flex-item">3</div>
+          </div>
+        </div>
+        
+        <div class="flex-item hstretch flexdemo">
+          <h5>Row layout, changing item alignment</h5>
+          <p>All flex-items aligned bottom right, no stretching</p>
+          <div class="flex-container-rows valign-end halign-end">
+            <div class="flex-item">1</div>
+            <div class="flex-item">2</div>
+            <div class="flex-item">3</div>
+          </div>
+        </div>
+        
+        <div class="flex-item hstretch flexdemo">
+          <h5>Default row layout</h5>
+          <p>All flex-items aligned vertical center left, no stretching.</p>
+          <div class="flex-container-rows valign-center">
+            <div class="flex-item">1</div>
+            <div class="flex-item">2</div>
+            <div class="flex-item">3</div>
+          </div>
+        </div>
+        
+        <div class="flex-item hstretch flexdemo">
+          <h5>Row layout, changing item alignment</h5>
+          <p>All flex-items aligned certical center right, no stretching</p>
+          <div class="flex-container-rows valign-center halign-end">
+            <div class="flex-item">1</div>
+            <div class="flex-item">2</div>
+            <div class="flex-item">3</div>
+          </div>
+        </div>
+        
+        <div class="flex-item hstretch flexdemo"> 
+          <h5>Default row layout</h5>
+          <p>All flex-items aligned horizontal center top, no stretching.</p>
+          <div class="flex-container-rows halign-center">
+            <div class="flex-item">1</div>
+            <div class="flex-item">2</div>
+            <div class="flex-item">3</div>
+          </div>
+        </div>
+        
+        <div class="flex-item hstretch flexdemo">
+          <h5>Row layout, changing item alignment</h5>
+          <p>All flex-items aligned horizontal center bottom, no stretching</p>
+          <div class="flex-container-rows halign-center valign-end">
+            <div class="flex-item">1</div>
+            <div class="flex-item">2</div>
+            <div class="flex-item">3</div>
+          </div>
+        </div>
+        
+        <div class="flex-item hstretch flexdemo">
+          <h5>Row layout, changing item alignment</h5>
+          <p>All flex-items aligned absolute center, no stretching</p>
+          <div class="flex-container-rows halign-center valign-center">
+            <div class="flex-item">1</div>
+            <div class="flex-item">2</div>
+            <div class="flex-item">3</div>
+          </div>
+        </div>
+        
+        <div class="flex-item hstretch flexdemo">
+          <h5>Flex item order</h5>
+          <p>Reverse flex-item order. Vertical center, horizontal stretch</p>
+          <div class="flex-container-rows reverse valign-center halign-stretch">
+            <div class="flex-item">1</div>
+            <div class="flex-item">2</div>
+            <div class="flex-item">3</div>
+          </div>
+        </div>
+        
+        <div class="flex-item hstretch flexdemo">
+          <h5>Item stretching</h5>
+          <p>Distribute space between and vertical stretch all items.</p>
+          <div class="flex-container-rows halign-spacebetween valign-stretch">
+            <div class="flex-item">1</div>
+            <div class="flex-item">2</div>
+            <div class="flex-item">3</div>
+          </div>
+        </div>
+        
+        <div class="flex-item hstretch flexdemo">
+          <h5>Distribute space around items</h5>
+          <p>Equally distribute space around items both ways.</p>
+          <div class="flex-container-rows halign-spacearound valign-spacearound">
+            <div class="flex-item">1</div>
+            <div class="flex-item vstretch">2</div>
+            <div class="flex-item">3</div>
+          </div>
+        </div>
+        
+        <div class="flex-item hstretch flexdemo">
+          <h5>Custom align flex items</h5>
+          <p>Center align items, bottom align second item.</p>
+          <div class="flex-container-rows halign-center">
+            <div class="flex-item">1</div>
+            <div class="flex-item end">2</div>
+            <div class="flex-item">3</div>
+          </div>
+        </div>
+        
+        <div class="flex-item hstretch flexdemo">
+          <h5>Item stretching</h5>
+          <p>Align all items center left. Horizontal stretch last item.</p>
+          <div class="flex-container-rows valign-center">
+            <div class="flex-item">1</div>
+            <div class="flex-item">2</div>
+            <div class="flex-item hstretch">3</div>
+          </div>
+        </div>
+        
+        <div class="flex-item hstretch flexdemo">
+          <h5>Item stretching</h5>
+          <p>Horizontal and vertical item stretching.</p>
+          <div class="flex-container-rows valign-stretch halign-stretch">
+            <div class="flex-item">1</div>
+            <div class="flex-item">2</div>
+            <div class="flex-item">3</div>
+          </div>
+        </div>
+        
+        
+        <!-- Flexcolumn alignment examples -->
+        <div class="flex-item" style="width: 100%;">
+         <h3>Column based flex items layout</h3>
+        </div>
+        
+        <div class="flex-item hstretch flexdemo">
+          <h5>Default column layout</h5>
+          <p>All flex-items aligned top left, no stretching.</p>
+          <div class="flex-container-cols">
+            <div class="flex-item">1</div>
+            <div class="flex-item">2</div>
+            <div class="flex-item">3</div>
+          </div>
+        </div>
+        
+        <div class="flex-item hstretch flexdemo">
+          <h5>Row layout, changing item alignment</h5>
+          <p>All flex-items aligned top right, no stretching</p>
+          <div class="flex-container-cols halign-end">
+            <div class="flex-item">1</div>
+            <div class="flex-item">2</div>
+            <div class="flex-item">3</div>
+          </div>
+        </div>
+        
+        <div class="flex-item hstretch flexdemo">
+          <h5>Default column layout</h5>
+          <p>All flex-items aligned bottom left, no stretching.</p>
+          <div class="flex-container-cols valign-end">
+            <div class="flex-item">1</div>
+            <div class="flex-item">2</div>
+            <div class="flex-item">3</div>
+          </div>
+        </div>
+        
+        <div class="flex-item hstretch flexdemo">
+          <h5>Row layout, changing item alignment</h5>
+          <p>All flex-items aligned bottom right, no stretching</p>
+          <div class="flex-container-cols valign-end halign-end">
+            <div class="flex-item">1</div>
+            <div class="flex-item">2</div>
+            <div class="flex-item">3</div>
+          </div>
+        </div>
+        
+        <div class="flex-item hstretch flexdemo">
+          <h5>Default column layout</h5>
+          <p>All flex-items aligned vertical center left, no stretching.</p>
+          <div class="flex-container-cols valign-center">
+            <div class="flex-item">1</div>
+            <div class="flex-item">2</div>
+            <div class="flex-item">3</div>
+          </div>
+        </div>
+        
+        <div class="flex-item hstretch flexdemo">
+          <h5>Row layout, changing item alignment</h5>
+          <p>All flex-items aligned certical center right, no stretching</p>
+          <div class="flex-container-cols valign-center halign-end">
+            <div class="flex-item">1</div>
+            <div class="flex-item">2</div>
+            <div class="flex-item">3</div>
+          </div>
+        </div>
+        
+        <div class="flex-item hstretch flexdemo">
+          <h5>Default column layout</h5>
+          <p>All flex-items aligned horizontal center top, no stretching.</p>
+          <div class="flex-container-cols halign-center">
+            <div class="flex-item">1</div>
+            <div class="flex-item">2</div>
+            <div class="flex-item">3</div>
+          </div>
+        </div>
+        
+        <div class="flex-item hstretch flexdemo">
+          <h5>Row layout, changing item alignment</h5>
+          <p>All flex-items aligned horizontal center bottom, no stretching</p>
+          <div class="flex-container-cols halign-center valign-end">
+            <div class="flex-item">1</div>
+            <div class="flex-item">2</div>
+            <div class="flex-item">3</div>
+          </div>
+        </div>
+        
+        <div class="flex-item hstretch flexdemo">
+          <h5>Column layout, changing item alignment</h5>
+          <p>All flex-items aligned absolute center, no stretching</p>
+          <div class="flex-container-cols halign-center valign-center">
+            <div class="flex-item">1</div>
+            <div class="flex-item">2</div>
+            <div class="flex-item">3</div>
+          </div>
+        </div>
+        
+        <div class="flex-item hstretch flexdemo">
+          <h5>Custom column layout</h5>
+          <p>Custom align the flex-items in the container</p>
+          <div class="flex-container-cols">
+            <div class="flex-item">1</div>
+            <div class="flex-item center">2</div>
+            <div class="flex-item end">3</div>
+          </div>
+        </div>
+        
+        <div class="flex-item hstretch flexdemo">
+          <h5>Item stretching</h5>
+          <p>All flex-items aligned top left, horizontal stretching</p>
+          <div class="flex-container-cols halign-stretch">
+            <div class="flex-item">1</div>
+            <div class="flex-item">2</div>
+            <div class="flex-item">3</div>
+          </div>
+        </div>
+        
+        <div class="flex-item hstretch flexdemo">
+          <h5>Item stretching</h5>
+          <p>All flex-items aligned top left, vertical stretching</p>
+          <div class="flex-container-cols valign-stretch">
+            <div class="flex-item">1</div>
+            <div class="flex-item">2</div>
+            <div class="flex-item">3</div>
+          </div>
+        </div>
+        
+        <div class="flex-item hstretch flexdemo">
+          <h5>Flex item stretching</h5>
+          <p>Horizontal stretch item 1, vertical stretch item 2
+          <div class="flex-container-cols" style="height: 180px">
+            <div class="flex-item hstretch">1</div>
+            <div class="flex-item vstretch">2</div>
+          </div>
+        </div>
+      
+    </div>
+    
+  </body>
+</html>

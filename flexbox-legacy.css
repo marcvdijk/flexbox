@@ -1,0 +1,162 @@
+/* ==========================================================================
+   No-flexbox, fallback for older browsers
+   - Uses, modernizer.js flexbox detection. Adds "no-flexbox" class to the 
+     html element if flexbox is not supported by the browser
+   - Flexbox fallback is based on a combination of inline-block (or inline for
+     IE 6/7), floats and absolute positioning.
+   - The fallback implementation needs an extra "flex-item-wrapper" wrapper
+     class around the flex-items inside the flex-container to work. Either 
+     add them yourself of use the jQuery flexbox-legacy.js script to add them
+     for you on page load.
+   - Special flexbox alignments such as reverse, space-around and space-between
+     are not supported.
+   ========================================================================== */
+
+.no-flexbox .flex-container,
+.no-flexbox .flex-container-cols,
+.no-flexbox .flex-container-rows {
+  width: 100%;
+  position: relative;
+  zoom: 1;
+}
+
+.no-flexbox .flex-item-wrapper:before,
+.no-flexbox .flex-item-wrapper:after,
+.no-flexbox .flex-container:before,
+.no-flexbox .flex-container-cols:before,
+.no-flexbox .flex-container-rows:before,
+.no-flexbox .flex-container:after,
+.no-flexbox .flex-container-cols:after,
+.no-flexbox .flex-container-rows:after {
+  content:"";
+  display:table;
+}
+
+.no-flexbox .flex-item-wrapper:after,
+.no-flexbox .flex-container:after,
+.no-flexbox .flex-container-cols:after,
+.no-flexbox .flex-container-rows:after {
+  clear:both;
+}
+
+/* Row based flex container layout */
+.no-flexbox .flex-container-rows.halign-end .flex-item {
+  float: right;
+}
+
+.no-flexbox .flex-container-rows.valign-end > .flex-item-wrapper {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+
+.no-flexbox .flex-container-rows.halign-center > .flex-item-wrapper {
+  text-align: center; 
+}
+
+.no-flexbox .flex-container-rows.valign-center > .flex-item-wrapper {
+  position: absolute;
+  top: 25%;
+  width: 100%;
+  margin: auto;
+}
+
+/* vertical stretching by setting flex-item-wrapper and flex-item to height 100% 
+   Disable top and bottom margin to prevent overflow*/
+.no-flexbox .flex-container-rows.valign-stretch .flex-item-wrapper > .flex-item {
+  height: 100%;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.no-flexbox .flex-container-rows.valign-stretch > .flex-item-wrapper {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+/* horizontal stretch based on flex-item count. Disable margin to prevent overflow*/
+.no-flexbox .flex-container-rows.halign-stretch .flex-item-wrapper > .flex-item {
+  margin: 0;
+}
+
+.no-flexbox .flex-container-rows.halign-stretch .flex-item-wrapper > .flex-item:first-child:nth-last-child(1) {
+	width: 100%;
+}
+
+.no-flexbox .flex-container-rows.halign-stretch .flex-item-wrapper > .flex-item:first-child:nth-last-child(2),
+.no-flexbox .flex-container-rows.halign-stretch .flex-item-wrapper > .flex-item:first-child:nth-last-child(2) ~ .flex-item {
+	width: 50%;
+}
+
+.no-flexbox .flex-container-rows.halign-stretch .flex-item-wrapper > .flex-item:first-child:nth-last-child(3),
+.no-flexbox .flex-container-rows.halign-stretch .flex-item-wrapper > .flex-item:first-child:nth-last-child(3) ~ .flex-item {
+	width: 33.33%;
+}
+
+.no-flexbox .flex-container-rows.halign-stretch .flex-item-wrapper > .flex-item:first-child:nth-last-child(4),
+.no-flexbox .flex-container-rows.halign-stretch .flex-item-wrapper > .flex-item:first-child:nth-last-child(4) ~ .flex-item {
+	width: 25%;
+}
+
+.no-flexbox .flex-container-rows.halign-stretch .flex-item-wrapper > .flex-item:first-child:nth-last-child(5),
+.no-flexbox .flex-container-rows.halign-stretch .flex-item-wrapper > .flex-item:first-child:nth-last-child(5) ~ .flex-item {
+	width: 20%;
+}
+
+/* Column based flex container layout */
+.no-flexbox .flex-container-cols > .flex-item-wrapper {
+  float: left;
+}
+
+.no-flexbox .flex-container-cols.halign-end > .flex-item-wrapper {
+  float: right;
+  right: 0;
+}
+
+.no-flexbox .flex-container-cols.valign-end > .flex-item-wrapper {
+  position: absolute;
+  bottom: 0;
+}
+
+.no-flexbox .flex-container-cols.halign-center > .flex-item-wrapper {
+  float: none;
+}
+
+.no-flexbox .flex-container-cols.halign-center .flex-item-wrapper > .flex-item {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.no-flexbox .flex-container-cols.valign-center > .flex-item-wrapper {
+  display: table-cell;
+  vertical-align: middle;
+  width: 100%;
+}
+
+/* ==========================================================================
+   Flexbox item.
+   - Default flex item does not strech
+   ========================================================================== */
+
+.no-flexbox .flex-item {
+  position: relative;
+  display: inline-block;
+  *display: inline;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  zoom: 1;
+  vertical-align: top;
+  min-width: auto;
+}
+
+.no-flexbox .flex-container-cols .flex-item {
+  display: block;
+} 
+
+.no-flexbox .nowrap {
+  overflow-y: hidden;
+}

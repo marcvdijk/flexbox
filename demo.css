@@ -1,0 +1,49 @@
+.center {
+  text-align: center;
+}
+
+.page_wrapper {
+  border: 2px solid #50525e;
+  border-radius: 6px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.flex-item {
+  margin: 25px 50px;
+}
+
+.flexdemo .flex-container-rows,
+.flexdemo .flex-container-cols {
+  background-color: #50525E;
+  border-radius: 8px;
+  min-height: 120px;
+  margin-top: 5px;
+}
+
+.flexdemo .flex-container-cols {
+  min-height: 230px;
+}
+
+.flexdemo .flex-item {
+  min-width: 50px;
+  min-height: 50px;
+  border-radius: 6px;
+  margin: 5px;
+  text-align: center;
+  color: #50525E;
+  font-weight: bold;
+}
+
+.no-flexbox .flexdemo .flex-item {
+  width: 50px;
+  height: 50px;
+}
+
+.flexdemo .flex-container-rows .flex-item {
+  background-color: #00FFF6;
+}
+
+.flexdemo .flex-container-cols .flex-item {
+  background-color: #A85EAD;
+}
